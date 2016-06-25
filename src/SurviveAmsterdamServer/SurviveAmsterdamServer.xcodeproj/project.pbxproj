@@ -10,7 +10,12 @@
 		D9B846F51D1ED7E3005E3F8C /* SurviveAmsterdamServer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9B846FC1D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */; };
 		D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */; };
-		D9B8470C1D1ED80B005E3F8C /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */; };
+		D9B8470F1D1EE024005E3F8C /* SAHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */; };
+		D9B847111D1EE0D0005E3F8C /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */; };
+		D9B847131D1EECE9005E3F8C /* SAPost.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B847121D1EECE9005E3F8C /* SAPost.mustache */; };
+		D9B847151D1EED7A005E3F8C /* SAPost.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847121D1EECE9005E3F8C /* SAPost.mustache */; };
+		D9B847171D1EED90005E3F8C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D9B847161D1EED90005E3F8C /* index.html */; };
+		D9B847181D1EED96005E3F8C /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847161D1EED90005E3F8C /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D9B847141D1EED6D005E3F8C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = webroot;
+			dstSubfolderSpec = 7;
+			files = (
+				D9B847181D1EED96005E3F8C /* index.html in CopyFiles */,
+				D9B847151D1EED7A005E3F8C /* SAPost.mustache in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SurviveAmsterdamServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurviveAmsterdamServer.h; sourceTree = "<group>"; };
@@ -30,7 +49,10 @@
 		D9B846FB1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurviveAmsterdamServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurviveAmsterdamServerTests.swift; sourceTree = "<group>"; };
 		D9B847021D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectLib.framework; path = ../PerfectLib.framework; sourceTree = "<group>"; };
+		D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAHandlers.swift; sourceTree = "<group>"; };
+		D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = "<group>"; };
+		D9B847121D1EECE9005E3F8C /* SAPost.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SAPost.mustache; sourceTree = "<group>"; };
+		D9B847161D1EED90005E3F8C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B8470C1D1ED80B005E3F8C /* PerfectLib.framework in Frameworks */,
+				D9B847111D1EE0D0005E3F8C /* PerfectLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +78,7 @@
 		D9B846E71D1ED7E2005E3F8C = {
 			isa = PBXGroup;
 			children = (
-				D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */,
+				D9B8470D1D1EDFD4005E3F8C /* Framework */,
 				D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */,
 				D9B846FF1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests */,
 				D9B846F21D1ED7E3005E3F8C /* Products */,
@@ -75,8 +97,11 @@
 		D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */ = {
 			isa = PBXGroup;
 			children = (
+				D9B847161D1EED90005E3F8C /* index.html */,
 				D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */,
 				D9B846F61D1ED7E3005E3F8C /* Info.plist */,
+				D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */,
+				D9B847121D1EECE9005E3F8C /* SAPost.mustache */,
 			);
 			path = SurviveAmsterdamServer;
 			sourceTree = "<group>";
@@ -88,6 +113,14 @@
 				D9B847021D1ED7E3005E3F8C /* Info.plist */,
 			);
 			path = SurviveAmsterdamServerTests;
+			sourceTree = "<group>";
+		};
+		D9B8470D1D1EDFD4005E3F8C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +145,7 @@
 				D9B846ED1D1ED7E3005E3F8C /* Frameworks */,
 				D9B846EE1D1ED7E3005E3F8C /* Headers */,
 				D9B846EF1D1ED7E3005E3F8C /* Resources */,
+				D9B847141D1EED6D005E3F8C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -181,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B847131D1EECE9005E3F8C /* SAPost.mustache in Resources */,
+				D9B847171D1EED90005E3F8C /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B8470F1D1EE024005E3F8C /* SAHandlers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,8 +348,9 @@
 		D9B847061D1ED7E3005E3F8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DSTROOT = "$(CONFIGURATION_BUILD_DIR)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,14 +366,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D9B847071D1ED7E3005E3F8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DSTROOT = "$(CONFIGURATION_BUILD_DIR)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
