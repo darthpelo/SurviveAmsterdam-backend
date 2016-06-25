@@ -77,7 +77,7 @@ final class SAHandlerPost: PageHandler {
                 
                 try sqlite.doWithTransaction {
                     var temp = 0
-                    try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
+                    try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
                         temp += 1
                     }
                     
