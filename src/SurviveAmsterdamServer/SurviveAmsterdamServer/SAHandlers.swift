@@ -133,7 +133,7 @@ final class SAHandlerCount:PageHandler {
     private func getDbIstance() -> SQLite? {
         do {
             // Try to get the last tap instance from the database
-            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+            let sqlite = try SQLite(SAHandlerCount.trackerDbPath)
             defer {
                 sqlite.close()
             }
