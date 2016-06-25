@@ -62,7 +62,11 @@ final class SAHandlerPost: PageHandler {
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "POST" {
-            guard let sqlite = getDbIstance() else { return values }
+            // Try to get the last tap instance from the database
+            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+            defer {
+                sqlite.close()
+            }
             
             // Adding a new product instance
             if let userid = request.param("userid"),
@@ -90,20 +94,6 @@ final class SAHandlerPost: PageHandler {
         
         return values
     }
-    
-    private func getDbIstance() -> SQLite? {
-        do {
-            // Try to get the last tap instance from the database
-            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            defer {
-                sqlite.close()
-            }
-            return sqlite
-        } catch {
-            print("Something went wrong!")
-        }
-        return nil
-    }
 }
 
 final class SAHandlerCount:PageHandler {
@@ -113,8 +103,11 @@ final class SAHandlerCount:PageHandler {
         var temp = 0
         
         // Grab the WebRequest
-        if let request = context.webRequest {
-            guard let sqlite = getDbIstance() else { return values }
+        if let request = context.webRequest where request.requestMethod() == "GET" {
+            let sqlite = try SQLite(SAHandlerCount.trackerDbPath)
+            defer {
+                sqlite.close()
+            }
             
             try sqlite.forEachRow("SELECT * FROM products") {
                 (stmt:SQLiteStmt, i:Int) -> () in
@@ -128,20 +121,6 @@ final class SAHandlerCount:PageHandler {
         values = ["count": temp, "time": timeStr]
         
         return values
-    }
-    
-    private func getDbIstance() -> SQLite? {
-        do {
-            // Try to get the last tap instance from the database
-            let sqlite = try SQLite(SAHandlerCount.trackerDbPath)
-            defer {
-                sqlite.close()
-            }
-            return sqlite
-        } catch {
-            print("Something went wrong!")
-        }
-        return nil
     }
 }
 
