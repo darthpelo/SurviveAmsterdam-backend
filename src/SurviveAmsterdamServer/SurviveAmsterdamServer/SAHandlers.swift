@@ -113,8 +113,12 @@ final class SAHandlerCount:PageHandler {
         var temp = 0
         
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET" {
-            guard let sqlite = getDbIstance() else { return values }
+        if let _ = context.webRequest {
+            // Try to get the last tap instance from the database
+            let sqlite = try SQLite(SAHandlerCount.trackerDbPath)
+            defer {
+                sqlite.close()
+            }
             
             try sqlite.forEachRow("SELECT * FROM products") {
                 (stmt:SQLiteStmt, i:Int) -> () in
