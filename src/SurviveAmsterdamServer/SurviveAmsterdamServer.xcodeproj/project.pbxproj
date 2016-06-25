@@ -12,10 +12,10 @@
 		D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */; };
 		D9B8470F1D1EE024005E3F8C /* SAHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */; };
 		D9B847111D1EE0D0005E3F8C /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */; };
-		D9B847131D1EECE9005E3F8C /* SAPost.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B847121D1EECE9005E3F8C /* SAPost.mustache */; };
-		D9B847151D1EED7A005E3F8C /* SAPost.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847121D1EECE9005E3F8C /* SAPost.mustache */; };
-		D9B847171D1EED90005E3F8C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D9B847161D1EED90005E3F8C /* index.html */; };
-		D9B847181D1EED96005E3F8C /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847161D1EED90005E3F8C /* index.html */; };
+		D9B8471B1D1EF437005E3F8C /* SAPost.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B847191D1EF437005E3F8C /* SAPost.mustache */; };
+		D9B8471C1D1EF437005E3F8C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D9B8471A1D1EF437005E3F8C /* index.html */; };
+		D9B8471D1D1EF43C005E3F8C /* SAPost.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847191D1EF437005E3F8C /* SAPost.mustache */; };
+		D9B8471E1D1EF43C005E3F8C /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B8471A1D1EF437005E3F8C /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +35,8 @@
 			dstPath = webroot;
 			dstSubfolderSpec = 7;
 			files = (
-				D9B847181D1EED96005E3F8C /* index.html in CopyFiles */,
-				D9B847151D1EED7A005E3F8C /* SAPost.mustache in CopyFiles */,
+				D9B8471D1D1EF43C005E3F8C /* SAPost.mustache in CopyFiles */,
+				D9B8471E1D1EF43C005E3F8C /* index.html in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +51,8 @@
 		D9B847021D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAHandlers.swift; sourceTree = "<group>"; };
 		D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = "<group>"; };
-		D9B847121D1EECE9005E3F8C /* SAPost.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SAPost.mustache; sourceTree = "<group>"; };
-		D9B847161D1EED90005E3F8C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		D9B847191D1EF437005E3F8C /* SAPost.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SAPost.mustache; sourceTree = "<group>"; };
+		D9B8471A1D1EF437005E3F8C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +97,11 @@
 		D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */ = {
 			isa = PBXGroup;
 			children = (
-				D9B847161D1EED90005E3F8C /* index.html */,
+				D9B847191D1EF437005E3F8C /* SAPost.mustache */,
+				D9B8471A1D1EF437005E3F8C /* index.html */,
 				D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */,
 				D9B846F61D1ED7E3005E3F8C /* Info.plist */,
 				D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */,
-				D9B847121D1EECE9005E3F8C /* SAPost.mustache */,
 			);
 			path = SurviveAmsterdamServer;
 			sourceTree = "<group>";
@@ -215,8 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B847131D1EECE9005E3F8C /* SAPost.mustache in Resources */,
-				D9B847171D1EED90005E3F8C /* index.html in Resources */,
+				D9B8471B1D1EF437005E3F8C /* SAPost.mustache in Resources */,
+				D9B8471C1D1EF437005E3F8C /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
