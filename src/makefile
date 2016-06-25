@@ -17,12 +17,13 @@ all: $(TARGET)
 install:
 	mv $(TARGET).so ../PerfectLibraries
 	cp SAPost.mustache ../webroot
+	cp Count.mustache ../webroot
 	cp index.html ../webroot
 modulecache:
 	@mkdir -p $(MODULE_CACHE_PATH)
 
 $(TARGET): modulecache
-	$(SWIFTC) $(SWIFTC_FLAGS) "SurviveAmsterdamServer/SurviveAmsterdamServer/SAHandlers.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
+	$(SWIFTC) $(SWIFTC_FLAGS) "SurviveAmsterdamServer/SurviveAmsterdamServe/rSAHandlers.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
 	clang++ $(LFLAGS) $@.o -o $@.so
 
 clean:
