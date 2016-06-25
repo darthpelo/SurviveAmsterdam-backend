@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9B846F51D1ED7E3005E3F8C /* SurviveAmsterdamServer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9B846FC1D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */; };
+		D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */; };
+		D9B8470C1D1ED80B005E3F8C /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9B846FD1D1ED7E3005E3F8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B846E81D1ED7E2005E3F8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9B846F01D1ED7E3005E3F8C;
+			remoteInfo = SurviveAmsterdamServer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SurviveAmsterdamServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurviveAmsterdamServer.h; sourceTree = "<group>"; };
+		D9B846F61D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B846FB1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurviveAmsterdamServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurviveAmsterdamServerTests.swift; sourceTree = "<group>"; };
+		D9B847021D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectLib.framework; path = ../PerfectLib.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9B846ED1D1ED7E3005E3F8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B8470C1D1ED80B005E3F8C /* PerfectLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B846F81D1ED7E3005E3F8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B846FC1D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9B846E71D1ED7E2005E3F8C = {
+			isa = PBXGroup;
+			children = (
+				D9B8470B1D1ED80B005E3F8C /* PerfectLib.framework */,
+				D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */,
+				D9B846FF1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests */,
+				D9B846F21D1ED7E3005E3F8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9B846F21D1ED7E3005E3F8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */,
+				D9B846FB1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */ = {
+			isa = PBXGroup;
+			children = (
+				D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */,
+				D9B846F61D1ED7E3005E3F8C /* Info.plist */,
+			);
+			path = SurviveAmsterdamServer;
+			sourceTree = "<group>";
+		};
+		D9B846FF1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */,
+				D9B847021D1ED7E3005E3F8C /* Info.plist */,
+			);
+			path = SurviveAmsterdamServerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D9B846EE1D1ED7E3005E3F8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B846F51D1ED7E3005E3F8C /* SurviveAmsterdamServer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D9B846F01D1ED7E3005E3F8C /* SurviveAmsterdamServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B847051D1ED7E3005E3F8C /* Build configuration list for PBXNativeTarget "SurviveAmsterdamServer" */;
+			buildPhases = (
+				D9B846EC1D1ED7E3005E3F8C /* Sources */,
+				D9B846ED1D1ED7E3005E3F8C /* Frameworks */,
+				D9B846EE1D1ED7E3005E3F8C /* Headers */,
+				D9B846EF1D1ED7E3005E3F8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SurviveAmsterdamServer;
+			productName = SurviveAmsterdamServer;
+			productReference = D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D9B846FA1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B847081D1ED7E3005E3F8C /* Build configuration list for PBXNativeTarget "SurviveAmsterdamServerTests" */;
+			buildPhases = (
+				D9B846F71D1ED7E3005E3F8C /* Sources */,
+				D9B846F81D1ED7E3005E3F8C /* Frameworks */,
+				D9B846F91D1ED7E3005E3F8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9B846FE1D1ED7E3005E3F8C /* PBXTargetDependency */,
+			);
+			name = SurviveAmsterdamServerTests;
+			productName = SurviveAmsterdamServerTests;
+			productReference = D9B846FB1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9B846E81D1ED7E2005E3F8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alessio Roberto";
+				TargetAttributes = {
+					D9B846F01D1ED7E3005E3F8C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D9B846FA1D1ED7E3005E3F8C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D9B846EB1D1ED7E2005E3F8C /* Build configuration list for PBXProject "SurviveAmsterdamServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D9B846E71D1ED7E2005E3F8C;
+			productRefGroup = D9B846F21D1ED7E3005E3F8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9B846F01D1ED7E3005E3F8C /* SurviveAmsterdamServer */,
+				D9B846FA1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9B846EF1D1ED7E3005E3F8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B846F91D1ED7E3005E3F8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9B846EC1D1ED7E3005E3F8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B846F71D1ED7E3005E3F8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9B846FE1D1ED7E3005E3F8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9B846F01D1ED7E3005E3F8C /* SurviveAmsterdamServer */;
+			targetProxy = D9B846FD1D1ED7E3005E3F8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D9B847031D1ED7E3005E3F8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D9B847041D1ED7E3005E3F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D9B847061D1ED7E3005E3F8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
+				DSTROOT = "$(CONFIGURATION_BUILD_DIR)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SurviveAmsterdamServer/Info.plist;
+				INSTALL_PATH = /PerfectLibraries;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D9B847071D1ED7E3005E3F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
+				DSTROOT = "$(CONFIGURATION_BUILD_DIR)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SurviveAmsterdamServer/Info.plist;
+				INSTALL_PATH = /PerfectLibraries;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D9B847091D1ED7E3005E3F8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurviveAmsterdamServerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D9B8470A1D1ED7E3005E3F8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurviveAmsterdamServerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9B846EB1D1ED7E2005E3F8C /* Build configuration list for PBXProject "SurviveAmsterdamServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B847031D1ED7E3005E3F8C /* Debug */,
+				D9B847041D1ED7E3005E3F8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B847051D1ED7E3005E3F8C /* Build configuration list for PBXNativeTarget "SurviveAmsterdamServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B847061D1ED7E3005E3F8C /* Debug */,
+				D9B847071D1ED7E3005E3F8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D9B847081D1ED7E3005E3F8C /* Build configuration list for PBXNativeTarget "SurviveAmsterdamServerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B847091D1ED7E3005E3F8C /* Debug */,
+				D9B8470A1D1ED7E3005E3F8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9B846E81D1ED7E2005E3F8C /* Project object */;
+}
