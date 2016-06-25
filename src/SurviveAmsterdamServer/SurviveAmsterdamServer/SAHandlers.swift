@@ -31,6 +31,10 @@ public func PerfectServerModuleInit() {
         
         return SAHandlerPost()
     }
+    
+    PageHandlerRegistry.addPageHandler("SAHandlerCount") { (r:WebResponse) -> PageHandler in
+        return SAHandlerCount()
+    }
 }
 
 // Handler class
@@ -74,6 +78,45 @@ final class SAHandlerPost: PageHandler {
                 }
             }
         }
+        
+        return values
+    }
+    
+    private func getDbIstance() -> SQLite? {
+        do {
+            // Try to get the last tap instance from the database
+            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+            defer {
+                sqlite.close()
+            }
+            return sqlite
+        } catch {
+            print("Something went wrong!")
+        }
+        return nil
+    }
+}
+
+final class SAHandlerCount:PageHandler {
+    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
+        var values = MustacheEvaluationContext.MapType()
+        
+        var temp = 0
+        
+        // Grab the WebRequest
+        if let request = context.webRequest where request.requestMethod() == "GET" {
+            guard let sqlite = getDbIstance() else { return values }
+            
+            try sqlite.forEachRow("SELECT * FROM products") {
+                (stmt:SQLiteStmt, i:Int) -> () in
+                
+                temp += 1
+            }
+        }
+        
+        let timeStr = try ICU.formatDate(ICU.getNow(), format: "d-MM-yyyy hh:mm")
+        
+        values = ["count": temp, "time": timeStr]
         
         return values
     }
