@@ -45,17 +45,17 @@ public func PerfectServerModuleInit() {
         return SAHandlerCount()
     }
     
-//    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
-//        // Create SQLite database.
-//        do {
-//            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-//            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
-//        } catch {
-//            print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
-//        }
-//        
-//        return SAHandlerProducts()
-//    }
+    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
+        // Create SQLite database.
+        do {
+            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
+        } catch {
+            print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
+        }
+        
+        return SAHandlerProducts()
+    }
 }
 
 // Handler class
@@ -140,11 +140,11 @@ final class SAHandlerCount:PageHandler {
     }
 }
 
-//final class SAHandlerProducts:PageHandler {
-//    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
-//        var values = MustacheEvaluationContext.MapType()
+final class SAHandlerProducts:PageHandler {
+    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
+        var values = MustacheEvaluationContext.MapType()
 //        var resultSets: [[String:Any]] = []
-//        
+        
 //        // Grab the WebRequest
 //        if let request = context.webRequest where request.requestMethod() == "GET" {
 //            
@@ -173,9 +173,9 @@ final class SAHandlerCount:PageHandler {
 //        resultSets.append(lastRow)
 //        
 //        values = ["products": resultSets]
-//        return values
-//    }
-//}
+        return values
+    }
+}
 
 extension PageHandler {
     static var trackerDbPath: String {
