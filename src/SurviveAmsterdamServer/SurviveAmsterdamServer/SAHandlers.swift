@@ -162,13 +162,15 @@ final class SAHandlerProducts:PageHandler {
 //                let place = stmt.columnText(2)
 //                let time = stmt.columnDouble(3)
                 
-                resultSets.append(["userid":userid, "name":"", "place":"", "time":0, "last":false])
+                resultSets.append(["userid":userid, "last":false])
             }
         }
         
-        var lastRow = resultSets.removeLast()
-        lastRow["last"] = true
-        resultSets.append(lastRow)
+        if resultSets.count > 1 {
+            var lastRow = resultSets.removeLast()
+            lastRow["last"] = true
+            resultSets.append(lastRow)
+        }
         
         values = ["products": resultSets]
         return values
