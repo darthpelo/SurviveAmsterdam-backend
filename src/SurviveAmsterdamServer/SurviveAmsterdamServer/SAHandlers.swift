@@ -143,7 +143,7 @@ final class SAHandlerCount:PageHandler {
 final class SAHandlerProducts:PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         var values = MustacheEvaluationContext.MapType()
-        var resultSets: [[String:AnyObject]] = []
+        var resultSets: [[String:Any]] = []
         
         print("TTHandlerTwo got request")
         
