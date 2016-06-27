@@ -24,7 +24,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerPost.trackerDbPath)
         }
@@ -37,7 +37,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerCount.trackerDbPath)
         }
@@ -49,7 +49,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
         }
