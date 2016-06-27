@@ -85,8 +85,6 @@ final class SAHandlerPost: PageHandler {
                 let name = request.param("name"),
                 let place = request.param("place") {
                 
-                let time = ICU.getNow()
-                
                 try sqlite.doWithTransaction {
                     var temp = 0
                     try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
@@ -100,7 +98,7 @@ final class SAHandlerPost: PageHandler {
                             try stmt.bind(1, userid)
                             try stmt.bind(2, name)
                             try stmt.bind(3, place)
-                            try stmt.bind(4, time)
+                            try stmt.bind(4, ICU.getNow())
                             
                             values = ["result": "OK"]
                         })
