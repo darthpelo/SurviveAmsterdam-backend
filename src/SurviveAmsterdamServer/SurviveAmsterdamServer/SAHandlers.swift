@@ -45,17 +45,17 @@ public func PerfectServerModuleInit() {
         return SAHandlerCount()
     }
     
-    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
-        // Create SQLite database.
-        do {
-            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
-        } catch {
-            print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
-        }
-        
-        return SAHandlerProducts()
-    }
+//    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
+//        // Create SQLite database.
+//        do {
+//            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+//            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
+//        } catch {
+//            print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
+//        }
+//        
+//        return SAHandlerProducts()
+//    }
 }
 
 // Handler class
@@ -140,42 +140,42 @@ final class SAHandlerCount:PageHandler {
     }
 }
 
-final class SAHandlerProducts:PageHandler {
-    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
-        var values = MustacheEvaluationContext.MapType()
-        var resultSets: [[String:Any]] = []
-        
-        // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET" {
-            
-            // Try to get the last tap instance from the database
-            let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)
-            defer {
-                sqlite.close()
-            }
-            
-            try sqlite.forEachRow("SELECT * FROM products") {
-                (stmt:SQLiteStmt, i:Int) -> () in
-                
-                // We got a result row
-                // Pull out the values and place them in the resulting values dictionary
-                let userid = stmt.columnText(0)
-                let name = stmt.columnText(1)
-                let place = stmt.columnText(2)
-                let time = stmt.columnDouble(3)
-                
-                resultSets.append(["userid":userid, "name":name, "palace":place, "time":time, "last":false])
-            }
-        }
-        
-        var lastRow = resultSets.removeLast()
-        lastRow["last"] = true
-        resultSets.append(lastRow)
-        
-        values = ["products": resultSets]
-        return values
-    }
-}
+//final class SAHandlerProducts:PageHandler {
+//    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
+//        var values = MustacheEvaluationContext.MapType()
+//        var resultSets: [[String:Any]] = []
+//        
+//        // Grab the WebRequest
+//        if let request = context.webRequest where request.requestMethod() == "GET" {
+//            
+//            // Try to get the last tap instance from the database
+//            let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)
+//            defer {
+//                sqlite.close()
+//            }
+//            
+//            try sqlite.forEachRow("SELECT * FROM products") {
+//                (stmt:SQLiteStmt, i:Int) -> () in
+//                
+//                // We got a result row
+//                // Pull out the values and place them in the resulting values dictionary
+//                let userid = stmt.columnText(0)
+//                let name = stmt.columnText(1)
+//                let place = stmt.columnText(2)
+//                let time = stmt.columnDouble(3)
+//                
+//                resultSets.append(["userid":userid, "name":name, "palace":place, "time":time, "last":false])
+//            }
+//        }
+//        
+//        var lastRow = resultSets.removeLast()
+//        lastRow["last"] = true
+//        resultSets.append(lastRow)
+//        
+//        values = ["products": resultSets]
+//        return values
+//    }
+//}
 
 extension PageHandler {
     static var trackerDbPath: String {
