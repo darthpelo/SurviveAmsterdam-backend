@@ -143,7 +143,8 @@ final class SAHandlerProducts:PageHandler {
         var resultSets: [[String:Any]] = []
         
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET" {
+        if let request = context.webRequest where request.requestMethod() == "GET",
+            let userid = request.param("userid") {
             
             // Try to get the last tap instance from the database
             let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)
@@ -151,7 +152,7 @@ final class SAHandlerProducts:PageHandler {
                 sqlite.close()
             }
             
-            try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
+            try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(userid)'") { (stmt, i) in
                 
                 // We got a result row
                 // Pull out the values and place them in the resulting values dictionary
