@@ -24,7 +24,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerPost.trackerDbPath)
         }
@@ -37,7 +37,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerCount.trackerDbPath)
         }
@@ -49,7 +49,7 @@ public func PerfectServerModuleInit() {
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid, INTEGER, name TEXT, place TEXT, time REAL)")
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid INTEGER, name TEXT, place TEXT, time REAL)")
         } catch {
             print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
         }
@@ -155,10 +155,10 @@ final class SAHandlerProducts:PageHandler {
                 
                 // We got a result row
                 // Pull out the values and place them in the resulting values dictionary
-                let userid = stmt.columnText(2)
-                let name = stmt.columnText(3)
-                let place = stmt.columnText(4)
-                let time = stmt.columnDouble(5)
+                let userid = stmt.columnText(1)
+                let name = stmt.columnText(2)
+                let place = stmt.columnText(3)
+                let time = stmt.columnDouble(4)
                 
                 resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
             }
