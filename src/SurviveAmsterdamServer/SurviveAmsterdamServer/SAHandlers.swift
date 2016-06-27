@@ -158,11 +158,11 @@ final class SAHandlerProducts:PageHandler {
                 // We got a result row
                 // Pull out the values and place them in the resulting values dictionary
                 let userid = stmt.columnText(0)
-                let name = stmt.columnText(1)
-                let place = stmt.columnText(2)
-                let time = stmt.columnDouble(3)
+//                let name = stmt.columnText(1)
+//                let place = stmt.columnText(2)
+//                let time = stmt.columnDouble(3)
                 
-                resultSets.append(["userid":userid, "name":name, "palace":place, "time":time, "last":false])
+                resultSets.append(["userid":userid, "name":"", "place":"", "time":0, "last":false])
             }
         }
         
