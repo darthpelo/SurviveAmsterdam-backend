@@ -1,7 +1,6 @@
 # Makefile for Perfect Server
 
 TARGET = SurviveAmsterdamServer
-SRC_PATH = "SurviveAmsterdamServer/SurviveAmsterdamServer/SAHandlers.swift"
 OS = $(shell uname)
 PERFECT_ROOT = /app/.delta/usr/src/perfect/PerfectLib
 DEBUG = -g -Onone -Xcc -DDEBUG=1
