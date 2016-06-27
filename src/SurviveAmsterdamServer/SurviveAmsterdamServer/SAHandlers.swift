@@ -145,10 +145,8 @@ final class SAHandlerProducts:PageHandler {
         var values = MustacheEvaluationContext.MapType()
         var resultSets: [[String:Any]] = []
         
-        print("TTHandlerTwo got request")
-        
         // Grab the WebRequest
-        if let request = context.webRequest {
+        if let request = context.webRequest where request.requestMethod() == "GET" {
             
             // Try to get the last tap instance from the database
             let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)

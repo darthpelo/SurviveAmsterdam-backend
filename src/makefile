@@ -18,6 +18,7 @@ install:
 	mv $(TARGET).so ../PerfectLibraries
 	cp SAPost.mustache ../webroot
 	cp Count.mustache ../webroot
+	cp products.mustache ../webroot
 	cp index.html ../webroot
 modulecache:
 	@mkdir -p $(MODULE_CACHE_PATH)
