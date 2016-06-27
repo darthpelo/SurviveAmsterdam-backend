@@ -143,8 +143,7 @@ final class SAHandlerProducts:PageHandler {
         var resultSets: [[String:Any]] = []
         
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET",
-            let userid = request.param("userid") {
+        if let request = context.webRequest where request.requestMethod() == "GET" {
             
             // Try to get the last tap instance from the database
             let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)
@@ -152,17 +151,32 @@ final class SAHandlerProducts:PageHandler {
                 sqlite.close()
             }
             
-            try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(userid)'") { (stmt, i) in
-                
-                // We got a result row
-                // Pull out the values and place them in the resulting values dictionary
-                let userid = stmt.columnText(1)
-                let name = stmt.columnText(2)
-                let place = stmt.columnText(3)
-                let time = stmt.columnDouble(4)
-                
-                resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
+            if let user = request.param("userid") {
+                try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(user)'") { (stmt, i) in
+                    
+                    // We got a result row
+                    // Pull out the values and place them in the resulting values dictionary
+                    let userid = stmt.columnText(1)
+                    let name = stmt.columnText(2)
+                    let place = stmt.columnText(3)
+                    let time = stmt.columnDouble(4)
+                    
+                    resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
+                }
+            } else {
+                try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
+                    
+                    // We got a result row
+                    // Pull out the values and place them in the resulting values dictionary
+                    let userid = stmt.columnText(1)
+                    let name = stmt.columnText(2)
+                    let place = stmt.columnText(3)
+                    let time = stmt.columnDouble(4)
+                    
+                    resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
+                }
             }
+            
         }
         
         if resultSets.count > 0 {
