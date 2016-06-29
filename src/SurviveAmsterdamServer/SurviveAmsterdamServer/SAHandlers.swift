@@ -86,22 +86,31 @@ final class SAHandlerPost: PageHandler {
                 let place = request.param("place") {
                 
                 try sqlite.doWithTransaction {
-                    var temp = 0
-                    try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
-                        temp += 1
-                    }
-                    
-                    if temp == 0 {
-                        // Insert the new row
-                        try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
-                            try stmt.bind(1, userid)
-                            try stmt.bind(2, name)
-                            try stmt.bind(3, place)
-                            try stmt.bind(4, ICU.getNow())
-            
-                            values = ["result": "OK"]
-                        })
-                    }
+                    // Insert the new row
+                    try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
+                        try stmt.bind(1, userid)
+                        try stmt.bind(2, name)
+                        try stmt.bind(3, place)
+                        try stmt.bind(4, ICU.getNow())
+                        
+                        values = ["result": "OK"]
+                    })
+//                    var temp = 0
+//                    try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
+//                        temp += 1
+//                    }
+//                    
+//                    if temp == 0 {
+//                        // Insert the new row
+//                        try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
+//                            try stmt.bind(1, userid)
+//                            try stmt.bind(2, name)
+//                            try stmt.bind(3, place)
+//                            try stmt.bind(4, ICU.getNow())
+//            
+//                            values = ["result": "OK"]
+//                        })
+//                    }
                 }
             }
         }
