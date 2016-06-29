@@ -152,16 +152,16 @@ final class SAHandlerProducts:PageHandler {
             }
             
             if let user = request.param("userid") {
-                try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(user)'") { (stmt, i) in
+                try sqlite.forEachRow("SELECT name, place, time FROM products WHERE userid = '\(user)'") { (stmt, i) in
                     
                     // We got a result row
                     // Pull out the values and place them in the resulting values dictionary
-                    let userid = stmt.columnText(1)
-                    let name = stmt.columnText(2)
-                    let place = stmt.columnText(3)
-                    let time = stmt.columnDouble(4)
+//                    let userid = stmt.columnText(1)
+                    let name = stmt.columnText(0)
+                    let place = stmt.columnText(1)
+                    let time = stmt.columnDouble(2)
                     
-                    resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
+                    resultSets.append(["userid":user, "name":name, "place":place, "time":time, "last":false])
                 }
             } else {
                 try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
