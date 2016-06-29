@@ -151,12 +151,14 @@ final class SAHandlerProducts:PageHandler {
                 sqlite.close()
             }
             
-            if let user = request.param("userid") {
+            let query = request.queryParams
+            if query.count > 0 {
+                let user = query.filter{$0.0 == "userid"}[1]
                 try sqlite.forEachRow("SELECT name, place, time FROM products WHERE userid = '\(user)'") { (stmt, i) in
                     
                     // We got a result row
                     // Pull out the values and place them in the resulting values dictionary
-//                    let userid = stmt.columnText(1)
+                    //                    let userid = stmt.columnText(1)
                     let name = stmt.columnText(0)
                     let place = stmt.columnText(1)
                     let time = stmt.columnDouble(2)
