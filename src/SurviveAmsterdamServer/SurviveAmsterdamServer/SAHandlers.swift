@@ -94,12 +94,11 @@ final class SAHandlerPost: PageHandler {
                     if temp == 0 {
                         // Insert the new row
                         try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
-                            
                             try stmt.bind(1, userid)
                             try stmt.bind(2, name)
                             try stmt.bind(3, place)
                             try stmt.bind(4, ICU.getNow())
-                            
+            
                             values = ["result": "OK"]
                         })
                     }
