@@ -173,7 +173,6 @@ final class SAHandlerProducts:PageHandler {
                     let name = stmt.columnText(2)
                     let place = stmt.columnText(3)
                     let time = stmt.columnDouble(4)
-                    
                     resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
                 }
             }
