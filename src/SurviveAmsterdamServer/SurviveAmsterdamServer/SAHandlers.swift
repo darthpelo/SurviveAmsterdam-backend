@@ -158,7 +158,6 @@ final class SAHandlerProducts:PageHandler {
                     
                     // We got a result row
                     // Pull out the values and place them in the resulting values dictionary
-                    //                    let userid = stmt.columnText(1)
                     let name = stmt.columnText(0)
                     let place = stmt.columnText(1)
                     let time = stmt.columnDouble(2)
