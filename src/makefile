@@ -17,7 +17,6 @@ all: $(TARGET)
 install:
 	mv $(TARGET).so ../PerfectLibraries
 	cp save.mustache ../webroot
-	cp count.mustache ../webroot
 	cp products.mustache ../webroot
 	cp index.html ../webroot
 modulecache:

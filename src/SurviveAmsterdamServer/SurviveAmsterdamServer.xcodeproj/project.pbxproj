@@ -18,7 +18,6 @@
 		D9B8472F1D2503DE005E3F8C /* save.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B8472E1D2503DE005E3F8C /* save.mustache */; };
 		D9B847331D2503F1005E3F8C /* save.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B8472E1D2503DE005E3F8C /* save.mustache */; };
 		D9B847341D2503F1005E3F8C /* products.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847251D211537005E3F8C /* products.mustache */; };
-		D9B847361D2504E7005E3F8C /* count.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B847351D2504E7005E3F8C /* count.mustache */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		D9B8471A1D1EF437005E3F8C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D9B847251D211537005E3F8C /* products.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = products.mustache; sourceTree = "<group>"; };
 		D9B8472E1D2503DE005E3F8C /* save.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = save.mustache; sourceTree = "<group>"; };
-		D9B847351D2504E7005E3F8C /* count.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = count.mustache; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 		D9B846F31D1ED7E3005E3F8C /* SurviveAmsterdamServer */ = {
 			isa = PBXGroup;
 			children = (
-				D9B847351D2504E7005E3F8C /* count.mustache */,
 				D9B8472E1D2503DE005E3F8C /* save.mustache */,
 				D9B847251D211537005E3F8C /* products.mustache */,
 				D9B8471A1D1EF437005E3F8C /* index.html */,
@@ -225,7 +222,6 @@
 			files = (
 				D9B8472F1D2503DE005E3F8C /* save.mustache in Resources */,
 				D9B847281D211537005E3F8C /* products.mustache in Resources */,
-				D9B847361D2504E7005E3F8C /* count.mustache in Resources */,
 				D9B8471C1D1EF437005E3F8C /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
