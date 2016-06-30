@@ -157,33 +157,13 @@ final class SAHandlerProducts:PageHandler {
             let queries = request.queryParams
             if queries.count > 0 {
                 for query in queries {
-                    if query.0 == "userid" {
-//                        resultSets.append(["userid":"", "name":query.0, "place":query.1, "time":0, "last":false])
-                        try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(query.1)'") { (stmt, i) in
-                            
-                            // We got a result row
-                            // Pull out the values and place them in the resulting values dictionary
-                            let userid = stmt.columnText(1)
-                            let name = stmt.columnText(2)
-                            let place = stmt.columnText(3)
-                            let time = stmt.columnDouble(4)
-                            
-                            resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
+                    if query.0 == "userid" { try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(query.1)'") { [weak self] (stmt, i) in
+                        resultSets.append(self!.appendSQLite(statement: stmt))
                         }
-
                     }
                 }
-            } else {
-                try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
-                    
-                    // We got a result row
-                    // Pull out the values and place them in the resulting values dictionary
-                    let userid = stmt.columnText(1)
-                    let name = stmt.columnText(2)
-                    let place = stmt.columnText(3)
-                    let time = stmt.columnDouble(4)
-                    resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
-                }
+            } else { try sqlite.forEachRow("SELECT * FROM products") { [weak self] (stmt, i) in
+                resultSets.append(self!.appendSQLite(statement: stmt)) }
             }
             
         }
@@ -196,6 +176,16 @@ final class SAHandlerProducts:PageHandler {
         
         values = ["products": resultSets]
         return values
+    }
+    
+    private func appendSQLite(statement stmt: SQLiteStmt) -> [String:Any] {
+        // We got a result row
+        // Pull out the values and place them in the resulting values dictionary
+        let userid = stmt.columnText(1)
+        let name = stmt.columnText(2)
+        let place = stmt.columnText(3)
+        let time = stmt.columnDouble(4)
+        return ["userid":userid, "name":name, "place":place, "time":time, "last":false]
     }
 }
 
