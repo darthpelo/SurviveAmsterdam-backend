@@ -144,6 +144,7 @@ final class SAHandlerProducts:PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         var values = MustacheEvaluationContext.MapType()
         var resultSets: [[String:Any]] = []
+        resultSets.append(["userid":"", "name":"", "place":"", "time":0, "last":false])
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "GET" {
@@ -161,11 +162,12 @@ final class SAHandlerProducts:PageHandler {
                     
                     // We got a result row
                     // Pull out the values and place them in the resulting values dictionary
+                    let userid = stmt.columnText(1)
                     let name = stmt.columnText(2)
                     let place = stmt.columnText(3)
                     let time = stmt.columnDouble(4)
                     
-                    resultSets.append(["userid":user, "name":name, "place":place, "time":time, "last":true])
+                    resultSets.append(["userid":userid, "name":name, "place":place, "time":time, "last":false])
                 }
             } else {
                 try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
