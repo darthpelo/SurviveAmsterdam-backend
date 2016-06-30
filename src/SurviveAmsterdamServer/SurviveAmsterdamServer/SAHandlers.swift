@@ -74,7 +74,7 @@ final class SAHandlerPost: PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         // The dictionary which we will return
         var values = MustacheEvaluationContext.MapType()
-        values = ["result": ResponseCode.NOK]
+        values = ["result": ResponseCode.NOK.rawValue]
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "POST" {
@@ -101,10 +101,10 @@ final class SAHandlerPost: PageHandler {
                             try stmt.bind(3, place)
                             try stmt.bind(4, ICU.getNow())
             
-                            values = ["result": ResponseCode.OK]
+                            values = ["result": ResponseCode.OK.rawValue]
                         })
                     } else {
-                        values = ["result": ResponseCode.PRS]
+                        values = ["result": ResponseCode.PRS.rawValue]
                     }
                 }
             }
