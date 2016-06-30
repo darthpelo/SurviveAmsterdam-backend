@@ -165,7 +165,7 @@ final class SAHandlerProducts:PageHandler {
                     let place = stmt.columnText(3)
                     let time = stmt.columnDouble(4)
                     
-                    resultSets.append(["userid":user, "name":name, "place":place, "time":time, "last":false])
+                    resultSets.append(["userid":user, "name":name, "place":place, "time":time, "last":true])
                 }
             } else {
                 try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
