@@ -157,8 +157,7 @@ final class SAHandlerProducts:PageHandler {
             
             let query = request.queryParams
             if query.count > 0 {
-//                let user = query.filter{$0.0 == "userid"}[1]
-                resultSets.append(["userid":"", "name":"", "place":"", "time":query.count, "last":false])
+                let _ = query.forEach{ resultSets.append(["userid":"", "name":$0.0, "place":$0.1, "time":0, "last":false]) }
 //                try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(user)'") { (stmt, i) in
 //                    
 //                    // We got a result row
