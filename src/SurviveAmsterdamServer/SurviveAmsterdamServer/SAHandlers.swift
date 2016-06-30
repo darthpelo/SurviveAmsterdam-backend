@@ -8,6 +8,12 @@
 
 import PerfectLib
 
+struct ResponseCode {
+    static let NOK = 000
+    static let OK  = 111
+    static let PRS = 001
+}
+
 // This is the function which all Perfect Server modules must expose.
 // The system will load the module and call this function.
 // In here, register any handlers or perform any one-time tasks.
@@ -70,7 +76,7 @@ final class SAHandlerPost: PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         // The dictionary which we will return
         var values = MustacheEvaluationContext.MapType()
-        values = ["result": "NOK"]
+        values = ["result": ResponseCode.NOK]
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "POST" {
@@ -86,15 +92,22 @@ final class SAHandlerPost: PageHandler {
                 let place = request.param("place") {
                 
                 try sqlite.doWithTransaction {
-                    // Insert the new row
-                    try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
-                        try stmt.bind(1, userid)
-                        try stmt.bind(2, name)
-                        try stmt.bind(3, place)
-                        try stmt.bind(4, ICU.getNow())
-                        
-                        values = ["result": "OK"]
-                    })
+                    var flag = false
+                    try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in flag = true }
+                    
+                    if !flag {
+                        // Insert the new row
+                        try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
+                            try stmt.bind(1, userid)
+                            try stmt.bind(2, name)
+                            try stmt.bind(3, place)
+                            try stmt.bind(4, ICU.getNow())
+            
+                            values = ["result": ResponseCode.OK]
+                        })
+                    } else {
+                        values = ["result": ResponseCode.PRS]
+                    }
                 }
             }
         }
