@@ -86,22 +86,15 @@ final class SAHandlerPost: PageHandler {
                 let place = request.param("place") {
                 
                 try sqlite.doWithTransaction {
-                    var flag = false
-                    try sqlite.forEachRow("SELECT userid, name FROM products WHERE userid = '\(userid)' AND name = '\(name)'") { (stmt, i) in
-                        flag = true
-                    }
-                    
-                    if !flag {
-                        // Insert the new row
-                        try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
-                            try stmt.bind(1, userid)
-                            try stmt.bind(2, name)
-                            try stmt.bind(3, place)
-                            try stmt.bind(4, ICU.getNow())
-            
-                            values = ["result": "OK"]
-                        })
-                    }
+                    // Insert the new row
+                    try sqlite.execute("INSERT INTO products (userid, name, place, time) VALUES (?,?,?,?)", doBindings: { (stmt) in
+                        try stmt.bind(1, userid)
+                        try stmt.bind(2, name)
+                        try stmt.bind(3, place)
+                        try stmt.bind(4, ICU.getNow())
+                        
+                        values = ["result": "OK"]
+                    })
                 }
             }
         }
@@ -123,9 +116,7 @@ final class SAHandlerCount:PageHandler {
                 sqlite.close()
             }
             
-            try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in
-                temp += 1
-            }
+            try sqlite.forEachRow("SELECT * FROM products") { (stmt, i) in temp += 1 }
         }
         
         let timeStr = try ICU.formatDate(ICU.getNow(), format: "d-MM-yyyy hh:mm")
