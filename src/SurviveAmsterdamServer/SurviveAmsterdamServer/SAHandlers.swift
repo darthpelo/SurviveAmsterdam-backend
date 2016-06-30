@@ -144,7 +144,6 @@ final class SAHandlerProducts:PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         var values = MustacheEvaluationContext.MapType()
         var resultSets: [[String:Any]] = []
-        resultSets.append(["userid":"", "name":"", "place":"", "time":0, "last":false])
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "GET" {
