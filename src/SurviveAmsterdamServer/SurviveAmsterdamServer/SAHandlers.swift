@@ -8,10 +8,8 @@
 
 import PerfectLib
 
-struct ResponseCode {
-    static let NOK = 000
-    static let OK  = 111
-    static let PRS = 001
+enum ResponseCode:String {
+    case OK, NOK, PRS
 }
 
 // This is the function which all Perfect Server modules must expose.
@@ -157,15 +155,16 @@ final class SAHandlerProducts:PageHandler {
             let queries = request.queryParams
             if queries.count > 0 {
                 for query in queries {
-                    if query.0 == "userid" { try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(query.1)'") { [weak self] (stmt, i) in
-                        resultSets.append(self!.appendSQLite(statement: stmt))
+                    if query.0 == "userid" {
+                        try sqlite.forEachRow("SELECT * FROM products WHERE userid = '\(query.1)'") { [weak self] (stmt, i) in
+                            resultSets.append(self!.appendSQLite(statement: stmt))
                         }
                     }
                 }
-            } else { try sqlite.forEachRow("SELECT * FROM products") { [weak self] (stmt, i) in
-                resultSets.append(self!.appendSQLite(statement: stmt)) }
+            } else {
+                try sqlite.forEachRow("SELECT * FROM products") { [weak self] (stmt, i) in
+                    resultSets.append(self!.appendSQLite(statement: stmt)) }
             }
-            
         }
         
         if resultSets.count > 0 {
