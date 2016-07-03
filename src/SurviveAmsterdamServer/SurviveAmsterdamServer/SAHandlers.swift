@@ -37,27 +37,10 @@ public func PerfectServerModuleInit() {
     }
     
     PageHandlerRegistry.addPageHandler("SAHandlerCount") { (r:WebResponse) -> PageHandler in
-        
-        // Create SQLite database.
-//        do {
-//            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-//            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
-//        } catch {
-//            print("Failure creating tracker database at " + SAHandlerCount.trackerDbPath)
-//        }
-        
         return SAHandlerCount()
     }
     
     PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
-        // Create SQLite database.
-//        do {
-//            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
-//            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
-//        } catch {
-//            print("Failure creating tracker database at " + SAHandlerProducts.trackerDbPath)
-//        }
-        
         return SAHandlerProducts()
     }
 }
