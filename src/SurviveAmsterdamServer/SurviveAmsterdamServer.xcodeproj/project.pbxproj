@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D998B05B1D2A46B500B08F62 /* MustacheHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B05A1D2A46B500B08F62 /* MustacheHandlers.swift */; };
-		D998B05D1D2A47CC00B08F62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B05C1D2A47CC00B08F62 /* Constants.swift */; };
 		D9B846F51D1ED7E3005E3F8C /* SurviveAmsterdamServer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9B846FC1D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */; };
 		D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */; };
@@ -51,8 +49,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D998B05A1D2A46B500B08F62 /* MustacheHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MustacheHandlers.swift; sourceTree = "<group>"; };
-		D998B05C1D2A47CC00B08F62 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SurviveAmsterdamServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurviveAmsterdamServer.h; sourceTree = "<group>"; };
 		D9B846F61D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,8 +109,6 @@
 				D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */,
 				D9B846F61D1ED7E3005E3F8C /* Info.plist */,
 				D9B8470E1D1EE024005E3F8C /* SAHandler.swift */,
-				D998B05A1D2A46B500B08F62 /* MustacheHandlers.swift */,
-				D998B05C1D2A47CC00B08F62 /* Constants.swift */,
 			);
 			path = SurviveAmsterdamServer;
 			sourceTree = "<group>";
@@ -260,9 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D998B05B1D2A46B500B08F62 /* MustacheHandlers.swift in Sources */,
 				D9B8470F1D1EE024005E3F8C /* SAHandler.swift in Sources */,
-				D998B05D1D2A47CC00B08F62 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
