@@ -25,9 +25,9 @@ modulecache:
 	@mkdir -p $(MODULE_CACHE_PATH)
 
 $(TARGET): modulecache
-	$(SWIFTC) $(SWIFTC_FLAGS) "SurviveAmsterdamServer/SurviveAmsterdamServer/SAHandler.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
-	clang++ $(LFLAGS) $@.o -o $@.so
 	$(SWIFTC) $(SWIFTC_FLAGS) "SurviveAmsterdamServer/SurviveAmsterdamServer/MustacheHandlers.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
+	clang++ $(LFLAGS) $@.o -o $@.so
+	$(SWIFTC) $(SWIFTC_FLAGS) "SurviveAmsterdamServer/SurviveAmsterdamServer/SAHandler.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
 	clang++ $(LFLAGS) $@.o -o $@.so
 
 clean:
