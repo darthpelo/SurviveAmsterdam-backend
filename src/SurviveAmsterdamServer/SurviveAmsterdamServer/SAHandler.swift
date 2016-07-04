@@ -7,6 +7,7 @@
 //
 
 import PerfectLib
+import MustacheHandlers
 
 // This is the function which all Perfect Server modules must expose.
 // The system will load the module and call this function.
@@ -20,7 +21,7 @@ public func PerfectServerModuleInit() {
         // The supplied WebResponse object can be used to tailor the return value.
         // However, all request processing should take place in the `valuesForResponse` function.
         (r:WebResponse) -> PageHandler in
-        
+
         // Create SQLite database.
         do {
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
@@ -28,16 +29,15 @@ public func PerfectServerModuleInit() {
         } catch {
             print("Failure creating tracker database at " + SAHandlerPost.trackerDbPath)
         }
-        
+
         return SAHandlerPost()
     }
-    
+
     PageHandlerRegistry.addPageHandler("SAHandlerCount") { (r:WebResponse) -> PageHandler in
         return SAHandlerCount()
     }
-    
+
     PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
         return SAHandlerProducts()
     }
 }
-
