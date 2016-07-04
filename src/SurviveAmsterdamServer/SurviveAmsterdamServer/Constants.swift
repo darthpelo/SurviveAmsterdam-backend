@@ -6,8 +6,6 @@
 //  Copyright © 2016 Alessio Roberto. All rights reserved.
 //
 
-import Foundation
-
 struct Constants {
     struct Mustache {
         static let result = "result"
