@@ -24,7 +24,7 @@ final class SAHandlerPost: PageHandler {
     func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
         // The dictionary which we will return
         var values = MustacheEvaluationContext.MapType()
-        values = ["result": ResponseCode.NOK.rawValue]
+        values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
         
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == "POST" {
@@ -51,10 +51,10 @@ final class SAHandlerPost: PageHandler {
                             try stmt.bind(3, place)
                             try stmt.bind(4, ICU.getNow())
                             
-                            values = ["result": ResponseCode.OK.rawValue]
+                            values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
                         })
                     } else {
-                        values = ["result": ResponseCode.PRS.rawValue]
+                        values = [Constants.Mustache.result: ResponseCode.PRS.rawValue]
                     }
                 }
             }
@@ -82,7 +82,7 @@ final class SAHandlerCount:PageHandler {
         
         let timeStr = try ICU.formatDate(ICU.getNow(), format: "d-MM-yyyy hh:mm")
         
-        values = ["count": temp, "time": timeStr]
+        values = [Constants.Mustache.count: temp, "time": timeStr]
         
         return values
     }
@@ -123,7 +123,7 @@ final class SAHandlerProducts:PageHandler {
             resultSets.append(lastRow)
         }
         
-        values = ["products": resultSets]
+        values = [Constants.Mustache.products: resultSets]
         return values
     }
     
