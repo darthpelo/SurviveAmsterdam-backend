@@ -17,6 +17,18 @@ struct Constants {
         static let result = "result"
         static let count = "count"
         static let products = "products"
+        static let handlerPost = "SAHandlerPost"
+        static let handlerCount = "SAHandlerCount"
+        static let handlerProducts = "SAHandlerProducts"
+    }
+    
+    struct HTTP {
+        static let POST = "POST"
+        static let GET = "GET"
+    }
+    
+    enum Columns:Int {
+        case userid, name, place
     }
 }
 
@@ -26,7 +38,7 @@ struct Constants {
 public func PerfectServerModuleInit() {
     // Register our handler class with the PageHandlerRegistry.
     // The name "SAHandler", which we supply here, is used within a mustache template to associate the template with the handler.
-    PageHandlerRegistry.addPageHandler("SAHandlerPost") {
+    PageHandlerRegistry.addPageHandler(Constants.Mustache.handlerPost) {
         // This closure is called in order to create the handler object.
         // It is called once for each relevant request.
         // The supplied WebResponse object can be used to tailor the return value.
@@ -44,11 +56,11 @@ public func PerfectServerModuleInit() {
         return SAHandlerPost()
     }
 
-    PageHandlerRegistry.addPageHandler("SAHandlerCount") { (r:WebResponse) -> PageHandler in
+    PageHandlerRegistry.addPageHandler(Constants.Mustache.handlerCount) { (r:WebResponse) -> PageHandler in
         return SAHandlerCount()
     }
 
-    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
+    PageHandlerRegistry.addPageHandler(Constants.Mustache.handlerProducts) { (r:WebResponse) -> PageHandler in
         return SAHandlerProducts()
     }
 }
@@ -68,7 +80,7 @@ final class SAHandlerPost: PageHandler {
         values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
 
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "POST" {
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.POST {
             // Try to get the last tap instance from the database
             let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
             defer {
@@ -112,7 +124,7 @@ final class SAHandlerCount:PageHandler {
         var temp = 0
 
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET" {
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.GET {
             let sqlite = try SQLite(SAHandlerCount.trackerDbPath)
             defer {
                 sqlite.close()
@@ -135,7 +147,7 @@ final class SAHandlerProducts:PageHandler {
         var resultSets: [[String:Any]] = []
 
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == "GET" {
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.GET {
 
             // Try to get the last tap instance from the database
             let sqlite = try SQLite(SAHandlerProducts.trackerDbPath)
@@ -171,7 +183,7 @@ final class SAHandlerProducts:PageHandler {
     private func appendSQLite(statement stmt: SQLiteStmt) -> [String:Any] {
         // We got a result row
         // Pull out the values and place them in the resulting values dictionary
-        let userid = stmt.columnText(1)
+        let userid = stmt.columnText(Constants.Columns.userid.rawValue)
         let name = stmt.columnText(2)
         let place = stmt.columnText(3)
         let time = stmt.columnDouble(4)
