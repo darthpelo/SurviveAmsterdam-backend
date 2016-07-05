@@ -25,16 +25,15 @@ The first scope of this REST APIs is very simple:
 ## How to setup
 [Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implementing swift backend server using perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
 
-## REST APIs
-A Perfect server side project need only one source file, where you must configure the handler logics with the public function `PerfectServerModuleInit()`. In our simple case we have three handlers:
-* one for the POST API
-* one for the GET Products API
-* the last to GET the number of all the Products saved on the DB.
+## Server Operations
+For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response.
+
+A Perfect server side project need only one source file `SAHandler.swift`, where you must configure the handler logics with the public function `PerfectServerModuleInit()` and some class which implement the `PageHandler` protocol. In this simple case there are three classes:
+* one for the POST API *SAHandlerPost*
+* one for the GET Products API *SAHandlerCount*
+* the last to GET the number of all the Products saved on the DB *SAHandlerProducts*
 
 ```
-// This is the function which all Perfect Server modules must expose.
-// The system will load the module and call this function.
-// In here, register any handlers or perform any one-time tasks.
 public func PerfectServerModuleInit() {
     PageHandlerRegistry.addPageHandler("SAHandlerPost") { (r:WebResponse) -> PageHandler in
         // Create SQLite database.
@@ -57,5 +56,4 @@ public func PerfectServerModuleInit() {
     }
 }
 ```
-
-For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response.
+### Mustache template
