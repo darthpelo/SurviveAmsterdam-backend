@@ -10,7 +10,7 @@
 		D9B846F51D1ED7E3005E3F8C /* SurviveAmsterdamServer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9B846FC1D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B846F11D1ED7E3005E3F8C /* SurviveAmsterdamServer.framework */; };
 		D9B847011D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */; };
-		D9B8470F1D1EE024005E3F8C /* SAHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */; };
+		D9B8470F1D1EE024005E3F8C /* SAHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8470E1D1EE024005E3F8C /* SAHandler.swift */; };
 		D9B847111D1EE0D0005E3F8C /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */; };
 		D9B8471C1D1EF437005E3F8C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D9B8471A1D1EF437005E3F8C /* index.html */; };
 		D9B8471E1D1EF43C005E3F8C /* index.html in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B8471A1D1EF437005E3F8C /* index.html */; };
@@ -55,7 +55,7 @@
 		D9B846FB1D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurviveAmsterdamServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B847001D1ED7E3005E3F8C /* SurviveAmsterdamServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurviveAmsterdamServerTests.swift; sourceTree = "<group>"; };
 		D9B847021D1ED7E3005E3F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAHandlers.swift; sourceTree = "<group>"; };
+		D9B8470E1D1EE024005E3F8C /* SAHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAHandler.swift; sourceTree = "<group>"; };
 		D9B847101D1EE0D0005E3F8C /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = "<group>"; };
 		D9B8471A1D1EF437005E3F8C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		D9B847251D211537005E3F8C /* products.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = products.mustache; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				D9B847381D250778005E3F8C /* Resources */,
 				D9B846F41D1ED7E3005E3F8C /* SurviveAmsterdamServer.h */,
 				D9B846F61D1ED7E3005E3F8C /* Info.plist */,
-				D9B8470E1D1EE024005E3F8C /* SAHandlers.swift */,
+				D9B8470E1D1EE024005E3F8C /* SAHandler.swift */,
 			);
 			path = SurviveAmsterdamServer;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B8470F1D1EE024005E3F8C /* SAHandlers.swift in Sources */,
+				D9B8470F1D1EE024005E3F8C /* SAHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +455,7 @@
 				D9B847071D1ED7E3005E3F8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9B847081D1ED7E3005E3F8C /* Build configuration list for PBXNativeTarget "SurviveAmsterdamServerTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +464,7 @@
 				D9B8470A1D1ED7E3005E3F8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -24,3 +24,46 @@ The first scope of this REST APIs is very simple:
 
 ## How to setup
 [Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implementing swift backend server using perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
+
+## REST APIs
+A Perfect server side project need only one source file, where you must configure the handler logics with the public function `PerfectServerModuleInit()`. In our simple case we have three handlers:
+* one for the POST API
+* one for the GET Products API
+* the last to GET the number of all the Products saved on the DB.
+
+```
+// This is the function which all Perfect Server modules must expose.
+// The system will load the module and call this function.
+// In here, register any handlers or perform any one-time tasks.
+public func PerfectServerModuleInit() {
+    // Register our handler class with the PageHandlerRegistry.
+    // The name "SAHandler", which we supply here, is used within a mustache template to associate the template with the handler.
+    PageHandlerRegistry.addPageHandler("SAHandlerPost") {
+        // This closure is called in order to create the handler object.
+        // It is called once for each relevant request.
+        // The supplied WebResponse object can be used to tailor the return value.
+        // However, all request processing should take place in the `valuesForResponse` function.
+        (r:WebResponse) -> PageHandler in
+
+        // Create SQLite database.
+        do {
+            let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, userid TEXT, name TEXT, place TEXT, time REAL)")
+        } catch {
+            print("Failure creating tracker database at " + SAHandlerPost.trackerDbPath)
+        }
+
+        return SAHandlerPost()
+    }
+
+    PageHandlerRegistry.addPageHandler("SAHandlerCount") { (r:WebResponse) -> PageHandler in
+        return SAHandlerCount()
+    }
+
+    PageHandlerRegistry.addPageHandler("SAHandlerProducts") { (r:WebResponse) -> PageHandler in
+        return SAHandlerProducts()
+    }
+}
+```
+
+For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response. 
