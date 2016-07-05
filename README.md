@@ -66,4 +66,4 @@ public func PerfectServerModuleInit() {
 }
 ```
 
-For this example, instead of work on URL routing, we used the mustache template solution, to associate the handler witch the URL request and the JSON response. 
+For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response. 
