@@ -209,7 +209,7 @@ final class SAHandlerDelete:PageHandler {
         }
         
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.GET {
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.POST {
             if let userid = request.param("userid"),
                 let name = request.param("name"),
                 let place = request.param("place") {
