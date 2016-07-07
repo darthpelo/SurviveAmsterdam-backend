@@ -217,8 +217,8 @@ final class SAHandlerDelete:PageHandler {
                 do {
                     try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'")
                     values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
-                } catch let error as SQLiteError {
-                    values = [Constants.Mustache.result: error._code]
+                } catch {
+                    values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
                 }
             }
         }
