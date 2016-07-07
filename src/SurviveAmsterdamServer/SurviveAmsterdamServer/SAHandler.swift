@@ -20,13 +20,14 @@ struct Constants {
         static let handlerPost = "SAHandlerPost"
         static let handlerCount = "SAHandlerCount"
         static let handlerProducts = "SAHandlerProducts"
+        static let handlerDelete = "SAHandlerDelete"
     }
-    
+
     struct HTTP {
         static let POST = "POST"
         static let GET = "GET"
     }
-    
+
     enum Columns:Int {
         case userid, name, place
     }
@@ -62,6 +63,10 @@ public func PerfectServerModuleInit() {
 
     PageHandlerRegistry.addPageHandler(Constants.Mustache.handlerProducts) { (r:WebResponse) -> PageHandler in
         return SAHandlerProducts()
+    }
+
+    PageHandlerRegistry.addPageHandler(Constants.Mustache.handlerDelete) { (r:WebResponse) -> PageHandler in
+        return SAHandlerDelete()
     }
 }
 
@@ -188,6 +193,34 @@ final class SAHandlerProducts:PageHandler {
         let place = stmt.columnText(3)
         let time = stmt.columnDouble(4)
         return ["userid":userid, "name":name, "place":place, "time":time, "last":false]
+    }
+}
+
+final class SAHandlerDelete:PageHandler {
+    func valuesForResponse(context: MustacheEvaluationContext, collector: MustacheEvaluationOutputCollector) throws -> MustacheEvaluationContext.MapType {
+        // The dictionary which we will return
+        var values = MustacheEvaluationContext.MapType()
+        values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
+        
+        // Try to get the last tap instance from the database
+        let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
+        defer {
+            sqlite.close()
+        }
+        
+        // Grab the WebRequest
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.GET {
+            if let userid = request.param("userid"),
+                let name = request.param("name"),
+                let place = request.param("place") {
+                
+                try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'", doBindings: { (stmt) in
+                    values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
+                })
+            }
+        }
+        
+        return values
     }
 }
 
