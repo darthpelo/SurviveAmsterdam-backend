@@ -209,14 +209,17 @@ final class SAHandlerDelete:PageHandler {
         }
         
         // Grab the WebRequest
-        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.GET {
+        if let request = context.webRequest where request.requestMethod() == Constants.HTTP.POST {
             if let userid = request.param("userid"),
                 let name = request.param("name"),
                 let place = request.param("place") {
                 
-                try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'", doBindings: { (stmt) in
+                do {
+                    try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'")
                     values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
-                })
+                } catch {
+                    values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
+                }
             }
         }
         
