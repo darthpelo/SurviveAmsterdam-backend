@@ -20,6 +20,8 @@
 		D9B847341D2503F1005E3F8C /* products.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847251D211537005E3F8C /* products.mustache */; };
 		D9B8473A1D25081A005E3F8C /* count.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9B847391D25081A005E3F8C /* count.mustache */; };
 		D9B8473B1D25081F005E3F8C /* count.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B847391D25081A005E3F8C /* count.mustache */; };
+		D9E2C9711D2E3AA9004D7B8C /* delete.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D9E2C9701D2E3AA9004D7B8C /* delete.mustache */; };
+		D9E2C9721D2E3AB1004D7B8C /* delete.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E2C9701D2E3AA9004D7B8C /* delete.mustache */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 			dstPath = webroot;
 			dstSubfolderSpec = 7;
 			files = (
+				D9E2C9721D2E3AB1004D7B8C /* delete.mustache in CopyFiles */,
 				D9B8473B1D25081F005E3F8C /* count.mustache in CopyFiles */,
 				D9B847331D2503F1005E3F8C /* save.mustache in CopyFiles */,
 				D9B847341D2503F1005E3F8C /* products.mustache in CopyFiles */,
@@ -61,6 +64,7 @@
 		D9B847251D211537005E3F8C /* products.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = products.mustache; sourceTree = "<group>"; };
 		D9B8472E1D2503DE005E3F8C /* save.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = save.mustache; sourceTree = "<group>"; };
 		D9B847391D25081A005E3F8C /* count.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = count.mustache; sourceTree = "<group>"; };
+		D9E2C9701D2E3AA9004D7B8C /* delete.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = delete.mustache; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		D9B847381D250778005E3F8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9E2C9701D2E3AA9004D7B8C /* delete.mustache */,
 				D9B847391D25081A005E3F8C /* count.mustache */,
 				D9B8472E1D2503DE005E3F8C /* save.mustache */,
 				D9B847251D211537005E3F8C /* products.mustache */,
@@ -235,6 +240,7 @@
 			files = (
 				D9B8472F1D2503DE005E3F8C /* save.mustache in Resources */,
 				D9B847281D211537005E3F8C /* products.mustache in Resources */,
+				D9E2C9711D2E3AA9004D7B8C /* delete.mustache in Resources */,
 				D9B8471C1D1EF437005E3F8C /* index.html in Resources */,
 				D9B8473A1D25081A005E3F8C /* count.mustache in Resources */,
 			);
