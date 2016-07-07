@@ -214,11 +214,12 @@ final class SAHandlerDelete:PageHandler {
                 let name = request.param("name"),
                 let place = request.param("place") {
                 
-                try sqlite.doWithTransaction({ 
-                    try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'", doBindings: { (stmt) in
-                        values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
-                    })
-                })
+                do {
+                    try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'")
+                    values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
+                } catch let error as SQLiteError {
+                    values = [Constants.Mustache.result: error._code]
+                }
             }
         }
         

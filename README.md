@@ -19,6 +19,7 @@ The first scope of this REST APIs is very simple:
 2) Due to the purpose of this project, I don't made any dumb of the SQLite DB before any deploy
 
 ### To Do list
+- [ ] Delete function
 - [ ] Save images on AWS S3
 - [ ] Save DB before any deploys
 
