@@ -3,7 +3,6 @@
 TARGET = SurviveAmsterdamServer
 OS = $(shell uname)
 PERFECT_ROOT = /app/.delta/usr/src/perfect/PerfectLib
-HANDLER_ROOT = "SurviveAmsterdamServer/SurviveAmsterdamServer/SAHandler.swift"
 DEBUG = -g -Onone -Xcc -DDEBUG=1
 SWIFTC = swift
 SWIFTC_FLAGS = -frontend -c $(DEBUG) -module-cache-path $(MODULE_CACHE_PATH) -emit-module -I /app/.delta/usr/local/lib -I /app/.delta/usr/include -I /app/.delta/usr/include/x86_64-linux-gnu -I $(PERFECT_ROOT)/linked/LibEvent \

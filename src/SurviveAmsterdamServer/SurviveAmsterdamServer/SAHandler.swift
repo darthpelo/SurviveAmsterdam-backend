@@ -201,19 +201,19 @@ final class SAHandlerDelete:PageHandler {
         // The dictionary which we will return
         var values = MustacheEvaluationContext.MapType()
         values = [Constants.Mustache.result: ResponseCode.NOK.rawValue]
-        
+
         // Try to get the last tap instance from the database
         let sqlite = try SQLite(SAHandlerPost.trackerDbPath)
         defer {
             sqlite.close()
         }
-        
+
         // Grab the WebRequest
         if let request = context.webRequest where request.requestMethod() == Constants.HTTP.POST {
             if let userid = request.param("userid"),
                 let name = request.param("name"),
                 let place = request.param("place") {
-                
+
                 do {
                     try sqlite.execute("DELETE FROM products WHERE userid = '\(userid)' AND name = '\(name)' AND place = '\(place)'")
                     values = [Constants.Mustache.result: ResponseCode.OK.rawValue]
@@ -222,7 +222,7 @@ final class SAHandlerDelete:PageHandler {
                 }
             }
         }
-        
+
         return values
     }
 }
