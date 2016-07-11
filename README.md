@@ -24,9 +24,9 @@ The first scope of this REST APIs is very simple:
 - [ ] Save DB before any deploys
 
 ## How to setup
-[Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implementing swift backend server using perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
+[Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implementing swift backend server using Perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
 
-For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response. Every
+For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), I used the mustache template solution, to associate the handler witch the URL request and the JSON response.
 
 ## Server Operations
 A Perfect server side project need only one source file `SAHandler.swift`, where you must configure the handler logics with the public function `PerfectServerModuleInit()` and some class which implement the `PageHandler` protocol. In this simple case there are three classes:
