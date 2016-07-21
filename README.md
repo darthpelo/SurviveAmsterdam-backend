@@ -14,9 +14,9 @@ The first scope of this REST APIs is very simple:
 * Retrieve all the Products saved on the DB
 
 ### Disclaimer
-1) I am not a backend developer, my tech background are iOS, hardware and firmware, so feel free to give me suggestions or create pull request
+1) I am not a backend developer, my tech background are iOS, hardware and firmware, so feel free to give me suggestions or create pull requests.
 
-2) Due to the purpose of this project, I don't made any dumb of the SQLite DB before any deploy
+2) Due to the purpose of this project, I don't made any dumb of the SQLite DB before any deploy.
 
 ### To Do list
 - [x] Delete function
