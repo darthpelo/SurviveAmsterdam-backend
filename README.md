@@ -14,9 +14,9 @@ The first scope of this REST APIs is very simple:
 * Retrieve all the Products saved on the DB
 
 ### Disclaimer
-1) I am not a backend developer, my tech background are iOS, hardware and firmware, so feel free to give me suggestions or create pull requests.
+1) I am not a backend developer, my technical background is iOS, hardware and firmware, so feel free to give me suggestions or create pull requests, to improve the handler.
 
-2) Due to the purpose of this project, I don't made any dumb of the SQLite DB before any deploy.
+2) Due to the purpose of this project, I create an instance of the database internally in the project (this is a SQLite DB). So after each deploy, the database is destroyed and recreated.
 
 ### To Do list
 - [x] Delete function
@@ -24,7 +24,7 @@ The first scope of this REST APIs is very simple:
 - [ ] Save DB before any deploys
 
 ## How to setup
-[Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implementing swift backend server using perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
+[Here](http://mrchrisbarker.postach.io/post/implementing-swift-backend-server-using-perfect-on-heroku) you can found a great video tutorial about how to implement swift backend server using perfect on Heroku. I suggest this tutorial because is based on the Perfect example that I use as inspiration.
 
 For this example, instead of work on [URL routing](https://github.com/PerfectlySoft/PerfectExample-URLRouting), we used the mustache template solution, to associate the handler witch the URL request and the JSON response. Every
 
